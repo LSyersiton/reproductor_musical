@@ -89,7 +89,6 @@ function pauseMain(){
     });
     let disk = document.querySelector('.image-div img');
     disk.style.animationPlayState = 'paused';
-    console.log(disk);
 }
 
 function playMain(){
@@ -115,7 +114,6 @@ function playMain(){
     });
     let disk = document.querySelector('.image-div img');
     disk.style.animationPlayState = 'running';
-    console.log(disk);
 }
 
 function loadSong(n) {
