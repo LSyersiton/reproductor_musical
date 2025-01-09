@@ -18,7 +18,7 @@ function toggleMenu() {
 function listSongs() {
     let songs = [
         {id: 1, title: 'And I Love Her', artist: 'The beatles', image: 'src/img/beatles.jpg', music: 'src/music/And I love her.mp3'},
-        {id: 2, title: '11 Y 6', artist: 'Fito Paez', image: 'src/img/fito_paez.jpg', music: 'src/music/11 y 6.mp3'},
+        {id: 2, title: '11 Y 6', artist: 'Fito Paez', image: 'src/img/fito_paez.jpg', music: 'src/music/11 Y 6.mp3'},
         {id: 3, title: 'Oye Gato', artist: 'Los Benders', image: 'src/img/benders.jpg', music: 'src/music/Oye Gato.mp3'},
         {id: 4, title: 'Somebody to Love', artist: 'Jefferson Airplane', image: 'src/img/jefferson_airplane.jpg', music: 'src/music/Somebody to Love.mp3'},
         {id: 5, title: 'Whatd I Say', artist: 'Ray Charles' , image: 'src/img/whatd-i-say-01.jpg', music: 'src/music/Whatd I Say.mp3'}       
