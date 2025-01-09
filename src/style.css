@@ -1,0 +1,214 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0; /* Fondo opcional */
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Evita el scroll horizontal */
+}
+
+.navbar-I{
+    flex: 0 0 250px; 
+    position: fixed;
+    background-color: #333; /* Color de fondo */
+    overflow: auto; /* Permite el scroll si hay muchos elementos */
+    min-height: 100%; /* Altura mínima para pantallas pequeñas */
+    padding: 10px; /* Espaciado interno */
+    z-index: 1000; /* Coloca el menú encima de otros elementos */
+    transform: translateX(-100%); /* Mueve el menú fuera de la pantalla */
+    opacity: 0; /* Hace invisible el menú */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Efecto de transición */
+    box-sizing: border-box;
+}
+
+.navbar-I.active {
+    transform: translateX(0); /* Mueve el menú a su posición original */
+    opacity: 1; /* Hace visible el menú */
+}
+
+.toggle-menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.playlist h3 {
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.playlist ul {
+    list-style-type: none; /* Elimina los puntos de las listas */
+    padding: 0;
+    margin: 0;
+}
+
+.playlist ul li {
+    display: flex; /* Organiza la imagen y los textos horizontalmente */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 10px; /* Espacio entre la imagen y los textos */
+    margin: 15px 0; /* Espaciado entre elementos <li> */
+    color: #fff; /* Color del texto */
+    font-size: 1.2rem; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor a un dedo apuntando */
+}
+
+.playlist ul li img {
+    width: 100px; /* Tamaño de la imagen */
+    height: 100px; /* Tamaño de la imagen */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+    border-radius: 5px; /* (Opcional) Redondea las esquinas */
+}
+
+.text-container {
+    display: flex; /* Aplica flexbox al contenedor de texto */
+    flex-direction: column; /* Asegura que los <span> estén en columna */
+}
+
+.background-music{
+    margin-top: 20vh;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center; 
+    align-items: center;
+    width: 90%; /* Se ajusta según el diseño*/
+    max-width: 600px; /* Ancho máximo */
+    margin: auto; /* Centra el section en la página */
+    padding: 20px; /*padding interno*/
+    border-radius: 15px; /*bordes redondos*/
+    background-color: #f4f4f4;
+}
+
+@media (max-width: 768px) {
+    .navbar-I {
+        flex: 0 0 100px; /* Reduce el ancho del menú */
+        font-size: 0.8rem; /* Ajusta el tamaño de texto */
+    }
+    .background-music {
+        padding: 10px;
+    }
+}
+
+/* Ajustes para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .navbar-I {
+        flex: 0 0 80px; /* Menú más estrecho */
+        font-size: 0.7rem;
+    }
+    .background-music {
+        padding: 5px;
+    }
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center; /* Centra los botones y el progreso */
+}
+
+.image-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajusta el tamaño de la imagen al contenedor */
+    width: 200px;
+    overflow: hidden;  /* Asegura que la imagen no sobresalga */
+}
+
+.image-div img {
+    max-width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    max-height: 100%; /* Evita que la imagen sobresalga */
+    object-fit: cover; /* Mantiene las proporciones y rellena el contenedor */
+    border-radius: 100%; /* Opcional: bordes redondeados */
+    animation: spin 3s linear infinite; /* Aplica la animación */
+    animation-play-state: paused; /* La animación está pausada por defecto */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 2rem; /* Tamaño del ícono */
+    cursor: pointer; /* Cambia el cursor a un dedo apuntando */
+    padding: 5px;
+}
+
+.icon-backward, .icon-play, .icon-foward {
+    padding: 3px;
+}
+
+.volume {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center;
+    position: absolute;
+    top: 50%; /* Centrado vertical */
+    right: 10px; /* Separación desde el borde derecho */
+    transform: translateY(-50%); /* Ajusta el centro */
+    gap: 10px; /* Espacio entre íconos y control */
+}
+
+.volume input[type="range"] {
+    writing-mode: bt-lr; /* Hace que el control sea vertical */
+    transform: rotate(270deg); /* Rota el control 270 grados */
+    height: 150px; /* Ajusta la longitud del control */
+    margin: 5px 0; /* Espaciado */
+}
+
+.time-duration {
+    display: flex; /* Activa Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 20px; /* Espaciado alrededor */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.progress-time {
+    width: 90%; /* Ancho relativo al contenedor */
+    height: 12px; /* Grosor de la barra */
+    border: 1px solid #ccc; /* Borde del contenedor de la barra */
+    border-radius: 20px; /* Bordes completamente redondeados */
+    background: linear-gradient(90deg, #e0e0e0, #f5f5f5); /* Fondo con degradado suave */
+    overflow: hidden; /* Esconde cualquier contenido que sobresalga */
+    appearance: none; /* Elimina estilos predeterminados del navegador */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para resaltar */
+}
+
+.progress-time::-webkit-progress-value {
+    background: linear-gradient(90deg, #1db954, #1aa34a); /* Efecto degradado en la parte llena */
+    border-radius: 8px; /* Mantiene bordes redondeados */
+}
+
+.progress-time::-webkit-progress-bar {
+    background: transparent; /* Asegura que el fondo sea transparente */
+}
+
+@media (min-width: 768px) {
+    #progress {
+        height: 16px; /* Más grosor en pantallas grandes */
+    }
+}

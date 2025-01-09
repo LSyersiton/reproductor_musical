@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div id="audio-container">
+        <audio id="music" src=""></audio>
+    </div>
+    <button class="toggle-menu" onclick="toggleMenu()">☰</button>
+    <div class="container">
+        <aside class="navbar-I">
+            <div class="playlist" id="playlist">
+                <h3>Menú de Playlist</h3>
+                <ul id="list">
+                </ul>
+            </div>
+        </aside>
+        <section class="background-music">
+            <div class="image-div" id="image">
+            </div>
+            <div class="name-music" id="title">
+            </div>
+            <div class="options">
+                <div class="buttons">
+                    <div class="icon-backward">
+                        <i class="fa-solid fa-backward" id="backward" onclick=""></i>
+                    </div>
+                    <div class="icon-play">
+                        <i class="fas fa-play" id="play"></i>
+                        <i class="fas fa-pause" id="pause" style="display: none;"></i>
+                    </div>
+                    <div class="icon-foward">
+                        <i class="fa-solid fa-forward" id="forward" onclick=""></i>
+                    </div>
+                </div>
+                <div class="time-duration">
+                    <input type="range" class="progress-time" id="progressBar" value="0" min="0" max="100" step="1">
+                </div>
+                <div class="volume">
+                    <input class="progress-volume" id="volume" type="range" name="volumen" min="0" max="1" step="0.1" value="1">
+                    <i class="fa-solid fa-volume-low" id="volume-low" style="display: none;"></i>
+                    <i class="fa-solid fa-volume-xmark" id="volume-mute" style="display: none;"></i>
+                    <i class="fa-solid fa-volume-high" id="volume-high"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="src/app.js"></script>
+    <script>render();</script>
+</body>
+</html>
